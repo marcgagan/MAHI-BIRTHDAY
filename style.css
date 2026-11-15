@@ -1,0 +1,439 @@
+
+/* ==========================================
+   MAAHI HOMEPAGE - LUXURY ROMANTIC DESIGN
+========================================== */
+
+:root {
+    --bg: #100207;
+    --burgundy: #4b101f;
+    --gold: #d9b46b;
+    --light-gold: #ffe8ad;
+    --white: #fff4ed;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* BACKGROUND */
+
+.background-glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    top: -250px;
+    left: -200px;
+    background: radial-gradient(circle, #701b37 0%, transparent 70%);
+    opacity: .35;
+    pointer-events: none;
+}
+
+.glow-two {
+    top: auto;
+    left: auto;
+    right: -200px;
+    bottom: -300px;
+    background: radial-gradient(circle, #a06b29 0%, transparent 70%);
+    opacity: .2;
+}
+
+#stars-layer,
+#particle-layer,
+#petal-layer,
+#confetti-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+}
+
+/* SCREENS */
+
+.screen {
+    min-height: 100vh;
+    width: 100%;
+    display: none;
+    position: relative;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.screen.active {
+    display: flex;
+    animation: screenReveal 1s ease both;
+}
+
+@keyframes screenReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* UNLOCK SCREEN */
+
+.unlock-content {
+    width: 100%;
+    max-width: 750px;
+    position: relative;
+    z-index: 10;
+}
+
+.unlock-heart {
+    font-size: 65px;
+    margin-bottom: 22px;
+    animation: heartbeat 1.5s infinite;
+    filter: drop-shadow(0 0 20px #ff466d);
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.18); }
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 5px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.unlock-content h1,
+.birthday-home h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 7vw, 72px);
+    font-weight: 500;
+    letter-spacing: 3px;
+    line-height: 1.2;
+}
+
+.unlock-name {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(42px, 8vw, 75px);
+    color: var(--light-gold);
+    margin-top: 12px;
+    text-shadow: 0 0 30px #d9a84b55;
+}
+
+.gold-line {
+    width: 180px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 35px auto;
+    position: relative;
+}
+
+.gold-line span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg);
+    color: var(--gold);
+    padding: 0 12px;
+}
+
+.unlock-description {
+    max-width: 500px;
+    margin: 0 auto 35px;
+    font-size: 14px;
+    line-height: 2;
+    color: #d7c3c8;
+    font-weight: 300;
+}
+
+/* BUTTON */
+
+.main-button {
+    border: 1px solid var(--gold);
+    background: linear-gradient(135deg, #8b263d, #48101f);
+    color: white;
+    padding: 17px 32px;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .35s ease;
+    box-shadow: 0 0 25px #d9a84b20;
+    position: relative;
+    z-index: 20;
+}
+
+.main-button span {
+    margin-left: 8px;
+}
+
+.main-button:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, #a93652, #65182d);
+    box-shadow: 0 0 35px #d9a84b55;
+}
+
+.footer-note {
+    color: #a88e96;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-top: 30px;
+}
+
+/* DECORATIVE RINGS */
+
+.ring {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border: 1px solid #d9b46b20;
+    border-radius: 50%;
+    animation: rotateRing 25s linear infinite;
+    pointer-events: none;
+}
+
+.ring-two {
+    width: 520px;
+    height: 520px;
+    border-style: dashed;
+    animation-direction: reverse;
+    animation-duration: 45s;
+}
+
+@keyframes rotateRing {
+    to { transform: rotate(360deg); }
+}
+
+/* BIRTHDAY HOME */
+
+.birthday-home {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.home-decoration {
+    color: var(--gold);
+    font-size: 28px;
+    letter-spacing: 15px;
+    margin-bottom: 25px;
+}
+
+.birthday-home h1 span {
+    display: block;
+    color: var(--light-gold);
+    margin-top: 12px;
+}
+
+.home-description {
+    color: #d7c3c8;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.birthday-card {
+    width: 100%;
+    max-width: 430px;
+    padding: 40px 25px;
+    margin: 45px auto 35px;
+    background: linear-gradient(145deg, #36101d, #1b0710);
+    border: 1px solid #bd913550;
+    border-radius: 12px;
+    box-shadow: 0 15px 60px #0008;
+}
+
+.cake-icon {
+    font-size: 65px;
+    margin-bottom: 20px;
+    animation: cakeFloat 3s ease-in-out infinite;
+}
+
+@keyframes cakeFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.birthday-card h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--light-gold);
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.birthday-card p {
+    font-size: 13px;
+    color: #d7c3c8;
+    line-height: 1.9;
+}
+
+.card-hearts {
+    color: var(--gold);
+    margin-top: 25px;
+    letter-spacing: 12px;
+}
+
+/* PARTICLES */
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 10px white;
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: .15; transform: scale(.6); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+
+.gold-particle {
+    position: absolute;
+    bottom: -20px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--gold);
+    animation: particleRise linear forwards;
+}
+
+@keyframes particleRise {
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+.rose-petal {
+    position: absolute;
+    top: -30px;
+    width: 12px;
+    height: 17px;
+    background: linear-gradient(135deg, #ff8ca3, #9d1e3b);
+    border-radius: 80% 0 80% 0;
+    opacity: .7;
+    animation: petalFall linear forwards;
+}
+
+@keyframes petalFall {
+    to {
+        transform: translate3d(var(--drift), 110vh, 0) rotate(700deg);
+        opacity: 0;
+    }
+}
+
+/* CONFETTI */
+
+.confetti-piece {
+    position: absolute;
+    top: -20px;
+    width: 8px;
+    height: 13px;
+    background: var(--gold);
+    animation: confettiFall linear forwards;
+}
+
+.confetti-piece:nth-child(3n) {
+    background: #e85b7c;
+}
+
+.confetti-piece:nth-child(3n + 1) {
+    background: #fff0bd;
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(110vh) rotate(900deg);
+        opacity: 0;
+    }
+}
+
+/* FLASH */
+
+.flash-overlay {
+    position: fixed;
+    inset: 0;
+    background: white;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 50;
+    transition: opacity .3s;
+}
+
+.flash-overlay.active {
+    opacity: .8;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .screen {
+        padding: 30px 18px;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .unlock-heart {
+        font-size: 52px;
+    }
+
+    .unlock-description {
+        font-size: 12px;
+    }
+
+    .main-button {
+        padding: 16px 22px;
+        font-size: 10px;
+    }
+
+    .ring {
+        width: 290px;
+        height: 290px;
+    }
+
+    .ring-two {
+        width: 350px;
+        height: 350px;
+    }
+
+    .birthday-card {
+        padding: 30px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
